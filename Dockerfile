@@ -9,7 +9,6 @@ RUN apt-get update && apt-get install -y vim
 COPY ./requirements.txt /requirements.txt
 RUN pip install --upgrade pip
 RUN pip install -r /requirements.txt
-RUN pip install flash-attn --no-build-isolation
 
 COPY . /data/app
 WORKDIR /data/app
@@ -17,3 +16,6 @@ WORKDIR /data/app
 EXPOSE 8000
 
 CMD cd /data/app/admin && sh start.sh
+
+# docker build -f Dockerfile -t imagist486.cn:48602/lk/trainer:v1.0 .
+# docker run --gpus "device=0" -p 48650:8000 -v /data/data/:/data/data/ -v /data/model_file/:/data/model_file/ --name trainer -itd imagist486.cn:48602/lk/trainer:v1.0
