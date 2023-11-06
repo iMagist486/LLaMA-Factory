@@ -1,4 +1,4 @@
-transformers>=4.31.0
+transformers==4.33.3
 datasets>=2.12.0
 accelerate>=0.21.0
 peft>=0.4.0
@@ -19,3 +19,4 @@ sse-starlette
 matplotlib
 packaging
 ninja
+bitsandbytes
